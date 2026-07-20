@@ -8,28 +8,24 @@
   <title>Frontend Mentor | Order summary card</title>
 </head>
 <body>
-  <picture>
-    <source media = "(min-width: 768px)" srcset="./images/pattern-background-desktop.svg">
-    <img src = "images/pattern-background-mobile.svg" alt = "Background Pattern Image">
-  </picture>
   <div class="summary-card">
     <div class = "main-comp">
       <img src = "images/illustration-hero.svg" alt = "Illustration Hero">
-      <h1>Order Summary</h1>
-      <p>You can now listen to millions of songs, audiobooks, and podcasts on any device anywhere you like!</p>
+      <h1 class="heading">Order Summary</h1>
+      <p class="summary-para">You can now listen to millions of songs, audiobooks, and podcasts on any device anywhere you like!</p>
     </div>
     <div class = "middle-comp">
       <img src = "images/icon-music.svg" alt = "Music Icon">
-      <ul>
-        <li>Annual Plan</li>
-        <li>$59.99/year</li>
-      </ul>
-      <p><a href = "#">Change</a></p>
+      <div class="plan-text">
+        <h3>Annual Plan</h3>
+        <p>$59.99/year</p>
+      </div>
+      <div class="change-link">
+        <a href = "#">Change</a>
+      </div>
     </div>
-    <div class="end-comp">
-      <p>Proceed to Payment</p>
-    </div>
-    <p class="cancel-menu">Cancel Order</p>
+    <button class="proceed-btn">Proceed to Payment</button>
+    <button class="cancel-order">Cancel Order</button>
   </div>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 

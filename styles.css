@@ -21,38 +21,51 @@
 body {
     font-family: 'Red Hat Display', sans-serif;
     background-color: var(--pale-blue);
+    background-image: url('images/pattern-background-mobile.svg');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: contain;
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
 
-picture {
-    opacity: 0.8;
-    display: inline-block;
-    transform: scale(1.15);
-    margin-top: -100px;
+@media (min-width: 768px) {
+    body {
+        background-image: url('images/pattern-background-desktop.svg');
+        background-size: cover;
+    }
 }
 
 .summary-card {
     background-color: white;
     width: 380px;
-    height: 580px;
-    margin: -250px auto;
     position: relative;
     overflow: hidden;
     border-radius: 20px;
+    box-shadow: 0 30px 40px -10px rgba(13, 20, 78, 0.3);
 }
 
-.main-comp h1 {
+.main-comp img {
+    width: 100%;
+    display: block;
+}
+
+.main-comp h1.heading {
     text-align: center;
     margin-top: 25px;
     font-weight: 900;
     font-size: 25px;
+    color: var(--dark-blue);
 }
 
-.main-comp p {
+.main-comp p.summary-para {
     text-align: center;
-    margin-top: 15px;
-    color: rgba(0, 0, 0, 0.5);
+    margin: 15px 30px 0;
+    color: var(--desaturated-blue);
 }
 
 p {
@@ -62,100 +75,90 @@ p {
 .middle-comp {
     background-color: var(--very-pale-blue);
     width: 75%;
-    height: 15%;
-    margin: 20px 50px auto;
+    margin: 25px auto 0;
+    padding: 15px 20px;
     border-radius: 15px;
+    display: flex;
+    align-items: center;
 }
 
 .middle-comp img {
-    margin: 23px 0 0 20px;
     width: 15%;
 }
 
-.middle-comp ul {
-    list-style: none;
-    margin: -51px 0 0 82px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.plan-text {
+    margin-left: 15px;
+    flex: 1;
 }
 
-.middle-comp ul li:not(:last-child) {
-    margin-bottom: 3px;
-}
-
-.middle-comp ul li:first-child {
-    font-weight: 900;
-}
-
-.middle-comp ul li {
+.plan-text h3 {
     font-size: 16px;
+    font-weight: 900;
+    color: var(--dark-blue);
 }
 
-.middle-comp ul li:last-child {
-    color: rgba(0, 0, 0, 0.5);
+.plan-text p {
+    font-size: 14px;
+    color: var(--desaturated-blue);
 }
 
-p a {
-    position: absolute;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    top: 396px;
-    left: 260px; 
+.change-link a {
+    color: var(--bright-blue);
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: underline;
 }
 
-p a:hover {
+.change-link a:hover {
     cursor: pointer;
     opacity: 0.65;
     text-decoration: none;
 }
 
-.end-comp {
-    background-color: var(--bright-blue);
+.proceed-btn {
+    display: block;
     width: 75%;
-    margin: 30px 50px;
-    height: 7%;
+    margin: 25px auto 0;
+    padding: 15px 0;
+    border: none;
     border-radius: 10px;
-}
-
-.end-comp:hover {
-    opacity: 0.7;
-    cursor: pointer;
-}
-
-.end-comp p {
-    text-align: center;
-    position: absolute;
-    margin: 10px 0 0 75px;
+    background-color: var(--bright-blue);
     color: white;
     font-weight: 700;
     font-size: 15px;
+    font-family: inherit;
 }
 
-.cancel-menu {
-    font-size: 15px;
-    text-align: center;
-    position: absolute;
-    bottom: 25px;
-    left: 150px;
-    color: rgba(0, 0, 0, 0.5);
-}
-
-.cancel-menu:hover {
+.proceed-btn:hover {
     cursor: pointer;
+    background-color: hsl(245, 75%, 65%);
+}
+
+.cancel-order {
+    display: block;
+    width: 100%;
+    margin: 20px 0 25px;
+    padding: 0;
+    border: none;
+    background: none;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+    color: var(--desaturated-blue);
+    font-family: inherit;
+}
+
+.cancel-order:hover {
+    cursor: pointer;
+    color: var(--dark-blue);
 }
 
 .attribution {
-    font-size: 15px; 
+    font-size: 15px;
     text-align: center;
-    position: absolute;
-    bottom: 15px;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+    margin-top: 15px;
 }
 
 .attribution a {
-    color: hsl(228, 45%, 44%); 
+    color: hsl(228, 45%, 44%);
 }
